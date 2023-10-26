@@ -4,10 +4,7 @@ import "net/http"
 
 // PlayJanlenHandler関数の実装
 func PlayJankenHandler(w http.ResponseWriter, r *http.Request) {
+	//PlayJankenの実行
 
-}
-
-// ResultListHandler関数の実装
-func ResultListHandler(w http.ResponseWriter, r *http.Request) {
-
+	//SaveResultの実行
 }
