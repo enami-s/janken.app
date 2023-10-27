@@ -8,5 +8,5 @@ type JankenRepository interface {
 	//じゃんけんの結果を保存するSave関数
 	Save(model.JankenResponse) error
 	//じゃんけんの結果一覧を取得するGetAll関数
-	GetAll() ([]string, error)
+	GetAll(int, int) ([]string, error)
 }

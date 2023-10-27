@@ -61,7 +61,34 @@ func LoadDB() (*sql.DB, error) {
 }
 
 // じゃんけんの結果一覧を取得するGetAll関数
-func (jr *JankenRepository) GetAll() ([]string, error) {
+func (jr *JankenRepository) GetAll(limit int, offset int) ([]model.JankenResponse, error) {
+	db, err := LoadDB()
+	if err != nil {
+		return nil, err
+	}
+	//DBを閉じる
+	defer db.Close()
+	rows, err := db.Query(
+		"SELECT user_hand, computer_hand, result FROM janken_results LIMIT ? OFFSET ?",
+		limit,
+		offset,
+	)
+	if err != nil {
+		return nil, err
+	}
+	var results []model.JankenResponse
 
-	return nil, nil
+	for rows.Next() {
+		var res model.JankenResponse
+		if err := rows.Scan(&res.UserHand, &res.ComputerHand, &res.Result); err != nil {
+			return nil, err
+		}
+		results = append(results, res)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return results, nil
 }

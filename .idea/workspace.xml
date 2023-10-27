@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8ebc0c5c-675b-410f-9e1b-12e57ec7f649" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/service/janken_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/application/service/janken_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/model/reult.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/reult.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/repository/janken.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/repository/janken.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/service/janken.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/service/janken.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/repository/janken_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/repository/janken_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/handler/janken_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/janken_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/handler/janken_handler_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/janken_handler_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/janken.db" beforeDir="false" afterPath="$PROJECT_DIR$/janken.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/handler/result_list_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/result_list_handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
