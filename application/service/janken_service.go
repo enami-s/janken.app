@@ -28,36 +28,33 @@ func (s *jankenServiceimpl) SaveResult(result string) error {
 	return nil
 }
 
+func getJankenResult(userHand, computerHand model.Hand) model.Result {
+	// 引き分けの場合
+	if userHand == computerHand {
+		return model.Draw
+	}
+
+	// ユーザーの勝ちの場合
+	if (userHand == model.Rock && computerHand == model.Scissors) ||
+		(userHand == model.Paper && computerHand == model.Rock) ||
+		(userHand == model.Scissors && computerHand == model.Paper) {
+		return model.Win
+	}
+
+	// ユーザーの負けの場合
+	return model.Lose
+}
+
 // PlayJankenの実装
 func (s *jankenServiceimpl) PlayJanken(hand model.Hand) (model.JankenResult, error) {
 	//コンピュターのじゃんけんの手をランダムで取得する
 	computerHand := getRandomHand()
+	result := getJankenResult(hand, computerHand)
 
-	//勝敗をIf分で判定する
-	// 引き分けの場合
-	if hand == computerHand {
-		return model.JankenResult{
-			ComputerHand: computerHand,
-			UserHand:     model.Hand(hand),
-			Result:       model.Draw,
-		}, nil
-	}
-
-	// ユーザーの勝ちの場合
-	if (hand == model.Rock && computerHand == model.Scissors) ||
-		(hand == model.Paper && computerHand == model.Rock) ||
-		(hand == model.Scissors && computerHand == model.Paper) {
-		return model.JankenResult{
-			ComputerHand: computerHand,
-			UserHand:     model.Hand(hand),
-			Result:       model.Win,
-		}, nil
-	}
-
-	// ユーザーの負けの場合
+	//JankenResultの構造体を返す
 	return model.JankenResult{
 		ComputerHand: computerHand,
-		UserHand:     model.Hand(hand),
-		Result:       model.Lose,
+		UserHand:     hand,
+		Result:       result,
 	}, nil
 }
