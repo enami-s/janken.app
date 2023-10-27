@@ -1,7 +1,7 @@
 // パッケージの定義
 package repository
 
-import "your_module_name/domain/model"
+import "github.com/enami-s/janken_app/domain/model"
 
 // DBアクセスメソッドのインタフェース定義
 type JankenRepository interface {
