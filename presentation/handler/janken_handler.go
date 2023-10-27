@@ -8,8 +8,9 @@ import (
 
 // PlayJanlenHandler関数の実装
 func PlayJankenHandler(w http.ResponseWriter, r *http.Request) {
-	//POSTリクエスト以外の場合は、処理を中断する
+	//POSTリクエスト以外の場合は、httpErrorを返すようにする
 	if r.Method != http.MethodPost {
+		http.Error(w, "Only POST method is allowed", http.StatusMethodNotAllowed)
 		return
 	}
 

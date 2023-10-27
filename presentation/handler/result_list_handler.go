@@ -7,8 +7,9 @@ import (
 
 // ResultListHandler関数の実装
 func ResultListHandler(w http.ResponseWriter, r *http.Request) {
-	//GETリクエスト以外の場合は、処理を中断する
+	//GETリクエスト以外の場合は、エラーメッセージを出力する
 	if r.Method != http.MethodGet {
+		http.Error(w, "Only GET method is allowed", http.StatusMethodNotAllowed)
 		return
 	}
 	//HttpRequestのリクエストをクライアントに表示する
