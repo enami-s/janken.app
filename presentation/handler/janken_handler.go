@@ -3,6 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"github.com/enami-s/janken_app/application/service"
+	"github.com/enami-s/janken_app/domain/model"
 	"net/http"
 )
 
@@ -13,15 +14,19 @@ func PlayJankenHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Only POST method is allowed", http.StatusMethodNotAllowed)
 		return
 	}
-
 	//POSTリクエストからフォームの値を取得する
 	handValue := r.PostFormValue("hand")
 
-	//HandValueの値を出力
-	json.NewEncoder(w).Encode(handValue)
-
-	//PlayJankenの実行
-	service.NewJankenService().PlayJanken(handValue)
+	//PlayJankenを実行して、結果を取得する
+	jankenService := service.NewJankenService()
+	result, err := jankenService.PlayJanken(model.Hand(handValue))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 
 	//SaveResultの実行
+
+	//結果をクライアントに返す
+	json.NewEncoder(w).Encode(result)
 }
