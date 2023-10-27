@@ -4,6 +4,7 @@ package service
 import (
 	"github.com/enami-s/janken_app/domain/model"
 	"github.com/enami-s/janken_app/domain/service"
+	"github.com/enami-s/janken_app/infrastructure/repository"
 	"math/rand"
 	"time"
 )
@@ -23,12 +24,21 @@ func NewJankenService() service.JankenService {
 }
 
 // SaveResultの実装
-func (s *jankenServiceimpl) SaveResult(result string) error {
+func SaveResult(result model.JankenResponse) error {
+	//JankenRepositoryのNew関数を実行する
+	repo := repository.NewJankenRepository()
+	//Save関数を実行する
+	err := repo.Save(result)
+	if err != nil {
+		//エラーが発生した場合は、エラーを返す
+		return err
+	}
+
 	//正常な返り値を返す
 	return nil
 }
 
-func getJankenResult(userHand, computerHand model.Hand) model.Result {
+func getJankenResult(userHand, computerHand model.Hand) model.JankenResult {
 	// 引き分けの場合
 	if userHand == computerHand {
 		return model.Draw
@@ -46,15 +56,22 @@ func getJankenResult(userHand, computerHand model.Hand) model.Result {
 }
 
 // PlayJankenの実装
-func (s *jankenServiceimpl) PlayJanken(hand model.Hand) (model.JankenResult, error) {
+func (s *jankenServiceimpl) PlayJanken(hand model.Hand) (model.JankenResponse, error) {
 	//コンピュターのじゃんけんの手をランダムで取得する
 	computerHand := getRandomHand()
 	result := getJankenResult(hand, computerHand)
-
-	//JankenResultの構造体を返す
-	return model.JankenResult{
+	//JankenResponseの構造体を定義
+	response := model.JankenResponse{
 		ComputerHand: computerHand,
 		UserHand:     hand,
 		Result:       result,
-	}, nil
+	}
+	//SaveResultの実行
+	err := SaveResult(response)
+	if err != nil {
+		//エラーが発生した場合は、エラーを返す
+		return model.JankenResponse{}, err
+	}
+	//JankenResultの構造体を返す
+	return response, nil
 }

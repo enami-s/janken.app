@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ebc0c5c-675b-410f-9e1b-12e57ec7f649" name="Changes" comment="Modelの定義">
-      <change afterPath="$PROJECT_DIR$/application/service/janken_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/otamesi.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/presentation/handler/result_list_handler.go" afterDir="false" />
+    <list default="true" id="8ebc0c5c-675b-410f-9e1b-12e57ec7f649" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/service/janken_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/application/service/janken_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/model/reult.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/reult.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/repository/janken.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/repository/janken.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/service/janken.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/service/janken.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/repository/janken_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/repository/janken_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/service/janken/janken_service.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/handler/janken_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/janken_handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/handler/result_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/handler/janken_handler_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/janken_handler_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,24 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/create__model",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/enamishunsuke/dev/janken_app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/DB&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/enamishunsuke/dev/janken_app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/application/service" />
@@ -66,7 +65,7 @@
       <recent name="$PROJECT_DIR$/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/enami-s/janken_app">
+  <component name="RunManager" selected="Go Test.TestPlayJankenHandler/Valid_Hand_Input_-_Rock in janken_handler_test.go">
     <configuration name="go build github.com/enami-s/janken_app" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="janken_app" />
       <working_directory value="$PROJECT_DIR$" />
@@ -100,9 +99,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestPlayJankenHandler/Valid_Hand_Input_-_Rock in janken_handler_test.go" />
         <item itemvalue="Go Build.go build github.com/enami-s/janken_app" />
         <item itemvalue="Go Test.TestResultListHandler/Get_Results_with_limit_and_offset in github.com/enami-s/janken.app/presentation/handler" />
-        <item itemvalue="Go Test.TestPlayJankenHandler/Valid_Hand_Input_-_Rock in janken_handler_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -134,14 +133,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>28</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>11</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/presentation/handler/janken_handler_test.go</url>
+          <line>20</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

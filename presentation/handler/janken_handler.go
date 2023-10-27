@@ -25,8 +25,6 @@ func PlayJankenHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//SaveResultの実行
-
 	//結果をクライアントに返す
 	json.NewEncoder(w).Encode(result)
 }
