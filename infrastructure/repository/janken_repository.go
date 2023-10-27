@@ -3,7 +3,6 @@ package repository
 
 import (
 	"database/sql"
-	"github.com/enami-s/janken_app/domain/model"
 )
 
 // じゃんけんのインタフェースを構造体に実装
@@ -16,7 +15,7 @@ func NewJankenRepository() *JankenRepository {
 }
 
 // じゃんけんの結果を保存するSave関数
-func (jr *JankenRepository) Save(result *model.Result) error {
+func (jr *JankenRepository) Save(result string) error {
 	//SQLiteを用いてDBを作成する
 	db, err := sql.Open("sqlite3", "./janken.db")
 	if err != nil {
@@ -32,6 +31,7 @@ func (jr *JankenRepository) Save(result *model.Result) error {
 }
 
 // じゃんけんの結果一覧を取得するGetAll関数
-func (jr *JankenRepository) GetAll() ([]*model.Result, error) {
+func (jr *JankenRepository) GetAll() ([]string, error) {
+
 	return nil, nil
 }
