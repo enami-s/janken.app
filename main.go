@@ -1,20 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"github.com/enami-s/janken_app/presentation/handler"
 	"net/http"
 )
 
-// じゃんけんのサーバーを定義する関数
-func janken(w http.ResponseWriter, r *http.Request) {
-	//じゃんけんアプリっていう出力を出す
-	fmt.Fprintf(w, "じゃんけんアプリ")
-}
-
 func main() {
-	//http.HandleFuncを用いて、janken関数をルートパスに登録する
-	http.HandleFunc("/", janken)
+	http.HandleFunc("/rps", handler.PlayJankenHandler)
+	http.HandleFunc("/results", handler.ResultListHandler)
+
 	//http.ListenAndServeを用いてサーバーを起動する
 	http.ListenAndServe(":8080", nil)
-
 }
