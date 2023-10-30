@@ -25,13 +25,27 @@ func ResultListHandler(w http.ResponseWriter, r *http.Request) {
 
 	// limitとoffsetの値をint型に変換する
 	limit, err := strconv.Atoi(limitStr)
+
+	//ErrがNilでなかったら、エラーメッセージを出力する
+	if err != nil {
+		http.Error(w, "limit must be between 0 and 100", http.StatusBadRequest)
+		return
+	}
+	//0＜Limit＜100の範囲外の場合は、エラーメッセージを出力する
+	if limit < 0 || limit > 100 {
+		http.Error(w, "limit must be between 0 and 100", http.StatusBadRequest)
+		return
+	}
+
+	//ErrがNilでなかったら、エラーメッセージを出力する
+	offset, err := strconv.Atoi(offsetStr)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	offset, err := strconv.Atoi(offsetStr)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+	//0＜Offset＜2147483647の範囲外の場合はエラーメッセージを出力する
+	if offset < 0 || offset > 2147483647 {
+		http.Error(w, "offset must be between 0 and 2147483647", http.StatusBadRequest)
 		return
 	}
 	//GetAllの実行
