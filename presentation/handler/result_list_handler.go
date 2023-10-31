@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/json"
+	"github.com/enami-s/janken_app/domain/model"
 	"github.com/enami-s/janken_app/infrastructure/repository"
 	"net/http"
 	"strconv"
@@ -32,7 +33,7 @@ func ResultListHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	//0＜Limit＜100の範囲外の場合は、エラーメッセージを出力する
-	if limit < 0 || limit > 100 {
+	if limit < 0 || limit > model.MaxLimit {
 		http.Error(w, "limit must be between 0 and 100", http.StatusBadRequest)
 		return
 	}
@@ -44,7 +45,7 @@ func ResultListHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	//0＜Offset＜2147483647の範囲外の場合はエラーメッセージを出力する
-	if offset < 0 || offset > 2147483647 {
+	if offset < 0 || offset > model.MaxOffset {
 		http.Error(w, "offset must be between 0 and 2147483647", http.StatusBadRequest)
 		return
 	}

@@ -26,3 +26,9 @@ type JankenResponse struct {
 	UserHand     Hand
 	Result       JankenResult
 }
+
+//LimitとOffSetの最大値を定義
+const (
+	MaxLimit  = 100
+	MaxOffset = 2147483647
+)
