@@ -27,7 +27,7 @@ type JankenResponse struct {
 	Result       JankenResult
 }
 
-//LimitとOffSetの最大値を定義
+// LimitとOffSetの最大値を定義
 const (
 	MaxLimit  = 100
 	MaxOffset = 2147483647
