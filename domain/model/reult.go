@@ -12,17 +12,23 @@ const (
 )
 
 // じゃんけんの結果をEnumで定義(win, lose, draw)
-type Result string
+type JankenResult string
 
 const (
-	Win  = Result("win")
-	Lose = Result("lose")
-	Draw = Result("draw")
+	Win  = JankenResult("win")
+	Lose = JankenResult("lose")
+	Draw = JankenResult("draw")
 )
 
 // じゃんけんの結果モデルの定義(Computerの手とUserの手と結果)
-type JankenResult struct {
+type JankenResponse struct {
 	ComputerHand Hand
 	UserHand     Hand
-	Result       Result
+	Result       JankenResult
 }
+
+//LimitとOffSetの最大値を定義
+const (
+	MaxLimit  = 100
+	MaxOffset = 2147483647
+)

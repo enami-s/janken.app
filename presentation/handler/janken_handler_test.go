@@ -20,8 +20,8 @@ func TestPlayJankenHandler(t *testing.T) {
 		var response map[string]string
 		json.Unmarshal(recorder.Body.Bytes(), &response)
 
-		// 期待される結果: "win", "lose", or "tie"
-		if response["result"] != "win" && response["result"] != "lose" && response["result"] != "tie" {
+		// 期待される結果: "win", "lose", or "draw"
+		if response["result"] != "win" && response["result"] != "lose" && response["result"] != "draw" {
 			t.Errorf("Unexpected result: %s", response["result"])
 		}
 	})
