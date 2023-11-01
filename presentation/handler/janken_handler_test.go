@@ -23,7 +23,7 @@ func TestPlayJankenHandler(t *testing.T) {
 
 		// 期待される結果: "win", "lose", or "draw"
 		if response["result"] != "win" && response["result"] != "lose" && response["result"] != "draw" {
-			t.Errorf("Unexpected result: %s", response["Result"])
+			t.Errorf("Unexpected result: %s", response["result"])
 		}
 		// ComputerHand期待される結果: "rock", "scissors", or "paper"
 		if response["computer_hand"] != "rock" && response["computer_hand"] != "scissors" && response["computer_hand"] != "paper" {
