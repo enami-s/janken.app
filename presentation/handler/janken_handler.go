@@ -16,7 +16,11 @@ func PlayJankenHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	//POSTリクエストからフォームの値を取得する
 	handValue := r.PostFormValue("hand")
-
+	//Handの値が不正な場合は、httpErrorを返すようにする
+	if handValue != "rock" && handValue != "scissors" && handValue != "paper" {
+		http.Error(w, "rock,scissors,paperのどれかを入力し直してください", http.StatusBadRequest)
+		return
+	}
 	//PlayJankenを実行して、結果を取得する
 	jankenService := service.NewJankenService()
 	result, err := jankenService.PlayJanken(model.Hand(handValue))

@@ -47,7 +47,6 @@ func deleteAllResults() error {
 func TestResultListHandler(t *testing.T) {
 	// テストケース1: じゃんけん結果一覧の取得
 	t.Run("Get Results with limit and offset", func(t *testing.T) {
-
 		// テストデータを3つ挿入
 		insertResult("rock", "win")
 		insertResult("scissors", "lose")
