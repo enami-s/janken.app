@@ -22,8 +22,16 @@ func TestPlayJankenHandler(t *testing.T) {
 		json.Unmarshal(recorder.Body.Bytes(), &response)
 
 		// 期待される結果: "win", "lose", or "draw"
-		if response["Result"] != "win" && response["Result"] != "lose" && response["Result"] != "draw" {
+		if response["result"] != "win" && response["result"] != "lose" && response["result"] != "draw" {
 			t.Errorf("Unexpected result: %s", response["Result"])
+		}
+		// ComputerHand期待される結果: "rock", "scissors", or "paper"
+		if response["computer_hand"] != "rock" && response["computer_hand"] != "scissors" && response["computer_hand"] != "paper" {
+			t.Errorf("Unexpected computer hand: %s", response["computer_hand"])
+		}
+		// UserHandの期待される結果: "rock", "scissors", or "paper"
+		if response["user_hand"] != "rock" && response["user_hand"] != "scissors" && response["user_hand"] != "paper" {
+			t.Errorf("Unexpected user hand: %s", response["user_hand"])
 		}
 	})
 
@@ -32,20 +40,12 @@ func TestPlayJankenHandler(t *testing.T) {
 		request := httptest.NewRequest(http.MethodPost, "http://localhost:8080/rps", strings.NewReader("hand=test"))
 		request.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 		recorder := httptest.NewRecorder()
-
 		PlayJankenHandler(recorder, request)
 		responseBody := strings.TrimSpace(recorder.Body.String())
-
-		//var response map[string]string
-		//// エラーメッセージを取得
-		//
-		//json.Unmarshal(recorder.Body.Bytes(), &response)
-
 		// 期待されるエラーメッセージ
 		expectedError := "rock,scissors,paperのどれかを入力し直してください"
 		if responseBody != expectedError {
 			t.Errorf("Expected error message: %s, but got: %s", expectedError, responseBody)
 		}
 	})
-
 }

@@ -22,7 +22,7 @@ const (
 
 // じゃんけんの結果モデルの定義(Computerの手とUserの手と結果)
 type JankenResponse struct {
-	ComputerHand Hand
-	UserHand     Hand
-	Result       JankenResult
+	ComputerHand Hand         `json:"computer_hand"`
+	UserHand     Hand         `json:"user_hand"`
+	Result       JankenResult `json:"result"`
 }

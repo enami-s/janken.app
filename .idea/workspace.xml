@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ebc0c5c-675b-410f-9e1b-12e57ec7f649" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/model/const.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/model/reult.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/model/reult.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/janken.db" beforeDir="false" afterPath="$PROJECT_DIR$/janken.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/handler/janken_handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/janken_handler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/handler/janken_handler_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/janken_handler_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/handler/result_list_handler_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/handler/result_list_handler_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
       <recent name="$PROJECT_DIR$/domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestPlayJankenHandler/Invalid_Hand_Input in github.com/enami-s/janken_app/presentation/handler">
+  <component name="RunManager" selected="Go Test.TestPlayJankenHandler/Valid_Hand_Input_-_Rock in janken_handler_test.go">
     <configuration name="go build github.com/enami-s/janken_app" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="janken_app" />
       <working_directory value="$PROJECT_DIR$" />
@@ -120,10 +116,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestPlayJankenHandler/Valid_Hand_Input_-_Rock in janken_handler_test.go" />
         <item itemvalue="Go Test.TestPlayJankenHandler/Invalid_Hand_Input in github.com/enami-s/janken_app/presentation/handler" />
         <item itemvalue="Go Test.TestResultListHandler/Get_Results_with_limit_and_offset in github.com/enami-s/janken_app/presentation/handler" />
         <item itemvalue="Go Test.result_list_handler_test.go" />
-        <item itemvalue="Go Test.TestPlayJankenHandler/Valid_Hand_Input_-_Rock in janken_handler_test.go" />
         <item itemvalue="Go Build.go build github.com/enami-s/janken_app" />
       </list>
     </recent_temporary>
@@ -131,6 +127,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
