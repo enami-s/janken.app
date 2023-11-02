@@ -15,8 +15,6 @@ func ResultListHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Only GET method is allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	//HttpRequestのリクエストをクライアントに表示する
-	json.NewEncoder(w).Encode(r.Method)
 	//repositoryのNewJankenRepository関数を実行
 	repo := repository.NewJankenRepository()
 	// クエリパラメータからlimitとoffsetの値を取得する
