@@ -37,7 +37,7 @@ func deleteAllResults() error {
 		return err
 	}
 	//DBの結果を全て削除する
-	_, err = db.Exec("DELETE FROM results")
+	_, err = db.Exec("DELETE FROM janken_results")
 	if err != nil {
 		return err
 	}
@@ -79,10 +79,10 @@ func TestResultListHandler(t *testing.T) {
 			t.Errorf("Expected 2 results, but got: %d", len(response))
 		}
 		if response[0]["user_hand"] != "rock" || response[0]["result"] != "win" {
-			t.Errorf("Expected hand: rock, result: win, but got: hand: %s, result: %s", response[0]["hand"], response[0]["result"])
+			t.Errorf("Expected hand: rock, result: win, but got: hand: %s, result: %s", response[0]["user_hand"], response[0]["result"])
 		}
-		if response[1]["hand"] != "scissors" || response[1]["result"] != "lose" {
-			t.Errorf("Expected hand: scissors, result: lose, but got: hand: %s, result: %s", response[1]["hand"], response[1]["result"])
+		if response[1]["user_hand"] != "scissors" || response[1]["result"] != "lose" {
+			t.Errorf("Expected hand: scissors, result: lose, but got: hand: %s, result: %s", response[1]["user_hand"], response[1]["result"])
 		}
 
 		// 後処理として、テストデータを全て削除
@@ -98,7 +98,7 @@ func TestResultListHandler(t *testing.T) {
 		insertResult("rock", "scissors", "win")
 		insertResult("scissors", "rock", "lose")
 
-		request := httptest.NewRequest(http.MethodGet, "http://localhost:8080/results?limit=2&offset=1", nil)
+		request := httptest.NewRequest(http.MethodGet, "http://localhost:8080/results?limit=2&offset=2", nil)
 		recorder := httptest.NewRecorder()
 
 		ResultListHandler(recorder, request)
@@ -110,11 +110,11 @@ func TestResultListHandler(t *testing.T) {
 		if len(response) != 2 {
 			t.Errorf("Expected 2 results, but got: %d", len(response))
 		}
-		if response[0]["hand"] != "paper" || response[0]["result"] != "tie" {
-			t.Errorf("Expected hand: paper, result: tie, but got: hand: %s, result: %s", response[0]["hand"], response[0]["result"])
+		if response[0]["user_hand"] != "paper" || response[0]["result"] != "draw" {
+			t.Errorf("Expected hand: paper, result: tie, but got: hand: %s, result: %s", response[0]["user_hand"], response[0]["result"])
 		}
-		if response[1]["hand"] != "rock" || response[1]["result"] != "win" {
-			t.Errorf("Expected hand: rock, result: win, but got: hand: %s, result: %s", response[1]["hand"], response[1]["result"])
+		if response[1]["user_hand"] != "rock" || response[1]["result"] != "win" {
+			t.Errorf("Expected hand: rock, result: win, but got: hand: %s, result: %s", response[1]["user_hand"], response[1]["result"])
 		}
 	})
 }
